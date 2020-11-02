@@ -1,6 +1,7 @@
 package ru.geekbrains.javathree.lesson_01;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * 1. Написать метод, который меняет два элемента массива местами.(массив может быть любого ссылочного типа);
@@ -22,15 +23,22 @@ public class Main {
         System.out.println(Arrays.toString(arrString)); // Task 1
         elementsSwap(arrString, 0, 3); // Task 1
         System.out.println(Arrays.toString(arrString)); // Task 1
+
+        List<String> list = convertToList(arrString); // Task 2
+        System.out.println(list.getClass() + " : " + list); // Task 2
     }
 
 
-
     // method: Task 1
-    private static <T> void elementsSwap(T[] array, int a, int b){
+    private static <T> void elementsSwap(T[] array, int a, int b) {
         T temp = array[a];
         array[a] = array[b];
         array[b] = temp;
+    }
+
+    // method: Task 2
+    private static <T> List<T> convertToList(T[] array) {
+        return Arrays.asList(array);
     }
 
 }
